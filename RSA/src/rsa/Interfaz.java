@@ -1,5 +1,6 @@
 package rsa;
 
+import java.awt.Color;
 import java.awt.Container;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -16,7 +17,7 @@ public class Interfaz extends JFrame{
     JLabel etqn = new JLabel("N: ");
     JLabel etqpal = new JLabel("Digite la palabra a encriptar: ");
     JLabel etqres = new JLabel("Resultado: ");
-    JLabel etqfrs = new JLabel();
+    JLabel etqfrs = new JLabel("ASCII: ");
     JTextField txtp = new JTextField();
     JTextField txtq = new JTextField();
     JTextField txtn = new JTextField();
@@ -29,41 +30,42 @@ public class Interfaz extends JFrame{
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         Container c = getContentPane();
         c.setLayout(null);
+        c.setBackground(Color.LIGHT_GRAY);
         c.add(etqp);
-        c.setBounds(10, 10, 20, 20);
+        etqp.setBounds(10, 10, 20, 20);
         
         c.add(txtp);
-        c.setBounds(50, 10, 80, 20);
+        txtp.setBounds(50, 10, 80, 20);
         
         c.add(etqq);
-        c.setBounds(160, 10, 20, 20);
+        etqq.setBounds(160, 10, 20, 20);
         
         c.add(txtq);
-        c.setBounds(200, 10, 80, 20);
+        txtq.setBounds(200, 10, 80, 20);
         
         c.add(etqn);
-        c.setBounds(300, 10, 20, 20);
+        etqn.setBounds(300, 10, 20, 20);
         
         c.add(txtn);
-        c.setBounds(380, 10, 80, 20);
+        txtn.setBounds(380, 10, 80, 20);
         
         c.add(etqpal);
-        c.setBounds(10, 70, 200, 50);
+        etqpal.setBounds(10, 70, 200, 50);
         
         c.add(txtplbra);
-        c.setBounds(50, 150, 300, 300);
+        txtplbra.setBounds(50, 150, 300, 50);
         
         c.add(enc);
-        c.setBounds(10, 500, 100, 70);
+        enc.setBounds(10, 250, 100, 70);
         
         c.add(des);
-        c.setBounds(100, 500, 100, 70);
+        des.setBounds(150, 250, 200, 70);
         
         c.add(etqres);
-        c.setBounds(10, 610, 200, 80);
+        etqres.setBounds(10, 410, 400, 80);
         
         c.add(etqfrs);
-        c.setBounds(300, 500, 100, 70);
+        etqfrs.setBounds(500, 300, 300, 70);
         
     }
     void mostrar(){
@@ -75,19 +77,23 @@ public class Interfaz extends JFrame{
         des.addActionListener(c);        
     }
     
+    
+    
     public JButton getBtnEnc(){
         return enc;
     }
     public JButton getBtnDes(){
         return des;
     }
+    public String getTexto(){
+		return txtplbra.getText();
+	}
     public void setTexto(String s){
         etqfrs.setText(s);
     }
     public void setTexto2(String s){
         etqres.setText("letras en ASCII: "+s);
     }
-    
     
     
 }

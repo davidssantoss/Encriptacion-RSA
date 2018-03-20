@@ -8,8 +8,8 @@ public abstract class abs {
     double array2[];
 
           
-    public  abstract int  FI (int p,int q);
-    public abstract int Z(int p, int q);    
+    public abstract int FI(int p , int q);
+    public abstract int Z(int p , int q);
     public abstract int S(int n);   
     
     public abstract int encriptar(int c);
